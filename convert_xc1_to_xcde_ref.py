@@ -14,9 +14,10 @@ Switch Manual Save Slots:
 (Autosave slot bfsgame00a is intentionally omitted)
 """
 
-REF_DIR = r"c:\Users\teit\Documents\Antigravity\xc games save tool\vibecoderanon - 2024.10.26 @ 22.50.00b4ngpaftrfc"
-WII_DIR = r"c:\Users\teit\Documents\Antigravity\xc games save tool\wii\title\SX4E"
-OUT_DIR = r"c:\Users\teit\Documents\Antigravity\xc games save tool\converted_switch_saves"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+REF_DIR = os.path.join(BASE_DIR, "vibecoderanon - 2024.10.26 @ 22.50.00b4ngpaftrfc")
+WII_DIR = os.path.join(BASE_DIR, "wii", "title", "SX4E")
+OUT_DIR = os.path.join(BASE_DIR, "converted_switch_saves")
 
 CHARACTER_WII_OFFSETS = [
     ("Shulk", 0xF8D0, 1),

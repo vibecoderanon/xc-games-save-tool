@@ -15,9 +15,10 @@ Clean Xenoblade Chronicles (Wii) to Switch Converter
 3. Updates Money (0x151B40), Header Play Time (0x04), and Party Member Level, EXP, AP (0x152368).
 """
 
-REF_DIR = r"c:\Users\teit\Documents\Antigravity\xc games save tool\vibecoderanon - 2024.09.08 @ 00.35.38b4hx"
-WII_DIR = r"c:\Users\teit\Documents\Antigravity\xc games save tool\wii\title\SX4E"
-OUT_DIR = r"c:\Users\teit\Documents\Antigravity\xc games save tool\converted_switch_saves"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+REF_DIR = os.path.join(BASE_DIR, "vibecoderanon - 2024.09.08 @ 00.35.38b4hx")
+WII_DIR = os.path.join(BASE_DIR, "wii", "title", "SX4E")
+OUT_DIR = os.path.join(BASE_DIR, "converted_switch_saves")
 
 CHARACTER_WII_OFFSETS = [
     ("Shulk", 0xF8D0, 1),

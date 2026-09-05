@@ -1,4 +1,4 @@
-﻿# Xenoblade Chronicles 1 → Definitive Edition Save Conversion Suite
+# Xenoblade Chronicles 1 → Definitive Edition Save Conversion Suite
 
 [![Source: Nintendo Wii (SX4E)](https://img.shields.io/badge/Source-Nintendo_Wii_(SX4E)-00a4e4.svg)](#)
 [![Target: Nintendo Switch (XC:DE)](https://img.shields.io/badge/Target-Nintendo_Switch_(XC:DE)-e60012.svg)](#)
@@ -99,7 +99,7 @@ xc games save tool/
 │   └── .gitkeep
 ├── wii/                                   # Source Wii save data dumps
 │   └── title/SX4E/                        # Monado save files (monado01-03, data.bin)
-└── vibecoderanon - .../                          # Reference Switch save templates and thumbnails
+└── vibecoderanon - .../                   # Reference Switch save templates and thumbnails
 ```
 
 ---
