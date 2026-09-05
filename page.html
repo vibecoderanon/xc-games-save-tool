@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Xenoblade Data Hub</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<style>
+	.card-height {
+		height:100%;
+	}
+	.card-footer {
+	  background: transparent;
+	  border-top: 0px;
+	}
+	body {
+		background-color: RGBA(33,37,41,1) !important;
+	}
+	.card-bg {
+		background-color: #375a7f5e;
+	}
+	.badge-bg {
+		background-color: rgb(55, 90, 127);
+	}
+	</style>
+	
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Xenoblade Data Hub">
+    <meta name="description" content="Central hub for Xenoblade game data and technical research information.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xenobladedata.github.io/">
+    <meta property="og:title" content="Xenoblade Data Hub">
+    <meta property="og:description" content="Central hub for Xenoblade game data and technical research information.">
+    <!--<meta property="og:image" content="">-->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xenobladedata.github.io/">
+    <meta property="twitter:title" content="Xenoblade Data Hub">
+    <meta property="twitter:description" content="Central hub for Xenoblade game data and technical research information.">
+    <!--<meta property="twitter:image" content="">-->
+  </head>
+  <body>
+	<div class="container-fluid py-4 px-5">
+		<header class="pb-3 mb-4 row">
+			<div class="col col-12 col-md-auto">
+				<a href="/" class="d-flex align-items-center text-white text-decoration-none">
+					<img src="/images/xc1_icon.svg" width="32"/>
+					<span class="fs-4 px-2">Xenoblade Data Hub</span>
+				</a>
+			</div>
+			<!-- Align left on small displays, align right on larger displays -->
+			<div class="col text-md-end">
+				<span class="text-center">
+				Last update: May 28, 2025<br/>
+				<a href="https://github.com/xenobladedata/xenobladedata.github.io/commits/master" target="_blank">View update history on GitHub</a>
+				</span>
+			</div>
+		</header>
+		<div class="d-flex justify-content-center">
+			<ul class="nav nav-pills mb-3 justify-content-center row" id="pills-tab" role="tablist">
+			  <li class="nav-item col col-6 col-md-auto" role="presentation">
+				<button class="nav-link active w-100 d-flex" id="pills-xc-tab" data-bs-toggle="pill" data-bs-target="#pills-xc" type="button" role="tab" aria-controls="pills-xc" aria-selected="true"><img src="/images/xc1_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/></button>
+			  </li>
+			  <li class="nav-item col col-6 col-md-auto" role="presentation">
+				<button class="nav-link w-100" id="pills-xcx-tab" data-bs-toggle="pill" data-bs-target="#pills-xcx" type="button" role="tab" aria-controls="pills-xcx" aria-selected="false"><img src="/images/xcx_icon.svg" width="32"/></button>
+			  </li>
+			  <li class="nav-item col col-6 col-md-auto" role="presentation">
+				<button class="nav-link w-100" id="pills-xc2-tab" data-bs-toggle="pill" data-bs-target="#pills-xc2" type="button" role="tab" aria-controls="pills-xc2" aria-selected="false"><img src="/images/xc2_icon.svg" width="32"/></button>
+			  </li>
+			  <li class="nav-item col col-6 col-md-auto" role="presentation">
+				<button class="nav-link w-100" id="pills-xc3-tab" data-bs-toggle="pill" data-bs-target="#pills-xc3" type="button" role="tab" aria-controls="pills-xc3" aria-selected="false"><img src="/images/xc3_icon.svg" width="32"/></button>
+			  </li>
+			  <li class="nav-item col col-6 col-md-auto" role="presentation">
+				<button class="nav-link w-100" id="pills-xcxde-tab" data-bs-toggle="pill" data-bs-target="#pills-xcxde" type="button" role="tab" aria-controls="pills-xcxde" aria-selected="false"><img src="/images/xcxde_icon.svg" width="32"/></button>
+			  </li>
+			  <li class="nav-item col col-6 col-md-auto" role="presentation">
+				<button class="nav-link w-100" id="pills-tools-tab" data-bs-toggle="pill" data-bs-target="#pills-tools" type="button" role="tab" aria-controls="pills-tools" aria-selected="false"><h5 class="text-white">Tools</h3></button>
+			  </li>
+			  <li class="nav-item col col-6 col-md-auto" role="presentation">
+				<button class="nav-link w-100" id="pills-links-tab" data-bs-toggle="pill" data-bs-target="#pills-links" type="button" role="tab" aria-controls="pills-links" aria-selected="false"><h5 class="text-white">Useful links</h3></button>
+			  </li>
+
+			</ul>
+		</div>
+		<div class="tab-content" id="pills-tabContent">
+		  <div class="tab-pane fade show active" id="pills-xc" role="tabpanel" aria-labelledby="pills-xc-tab" tabindex="0">
+			  <div class="col-md-12 py-2">
+				<div class="h-100 p-5 rounded-3">
+					<img class="d-block mx-auto mb-4 img-fluid" src="/images/XC1_logo_small.png">
+					<div class="d-flex justify-content-center row text-center">
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 1 Data</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb1\bdat\index.html" class="btn btn-outline-info m-1" type="button">📁 Open</a><br/><br/>
+									</div>
+									&nbsp;<br/>&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Definitive Edition Data</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb1de\bdat\index.html" class="btn btn-outline-info m-1" type="button">📁 Open</a><br/><br/>
+									</div>
+									&nbsp;<br/>&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 1 PKH file contents</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb1_pkh_files.xlsx" class="btn btn-outline-info m-1" type="button">📖 Excel spreadsheet</a>
+									</div>
+									<small>Provided by: Amber</small><br/>
+									<small>Last update: August 6, 2023</small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade DE Audio Mapping data<br/>(🇬🇧 English / 🇯🇵 日本語)</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xbde_audio_mapping.html" class="btn btn-outline-info m-1" type="button">🧍 HTML</a>
+										<a href="xbde_audio_mapping.csv" class="btn btn-outline-info m-1" type="button">🤖 CSV</a>
+									</div>
+									<small>Provided by: ampharos_2.0</small><br/>
+									<small>Last update: August 5, 2023</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+		  </div>
+		  <div class="tab-pane fade" id="pills-xcx" role="tabpanel" aria-labelledby="pills-xcx-tab" tabindex="0">
+			  <div class="col-md-12 py-2">
+				<div class="h-100 p-5 rounded-3">
+					<img class="d-block mx-auto mb-4 img-fluid" src="/images/XCX_logo_small.png">
+					<div class="d-flex justify-content-center">
+						<a href="xbx\bdat\index.html" class="btn btn-outline-info m-1" type="button">📁 Xenoblade X Data</a>
+					</div>
+				</div>
+			  </div>
+		  </div>
+		  <div class="tab-pane fade" id="pills-xc2" role="tabpanel" aria-labelledby="pills-xc2-tab" tabindex="0">
+			  <div class="col-md-12 py-2">
+				<div class="h-100 p-5 rounded-3">
+					<img class="d-block mx-auto mb-4 img-fluid" src="/images/XC2_logo_small.png">
+					<div class="d-flex justify-content-center">
+						<a href="xb2\index.html" class="btn btn-outline-info m-1" type="button">🇬🇧 Xenoblade 2 Data (English)</a>
+						<a href="xb2_jp\index.html" class="btn btn-outline-info m-1" type="button">🇯🇵 Xenoblade 2 Data (日本語)</a>
+						<a href="xb2_cn\index.html" class="btn btn-outline-info m-1" type="button">🇨🇳 Xenoblade 2 Data (中文)</a>
+					</div>
+				</div>
+			  </div>
+		  </div>
+		  <div class="tab-pane fade" id="pills-xc3" role="tabpanel" aria-labelledby="pills-xc3-tab" tabindex="0">
+			  <div class="col-md-12">
+				<div class="h-100 p-2 rounded-3 text-center">
+					<img class="d-block mx-auto mb-4 img-fluid" src="/images/XC3_logo_small.png">
+					<div class="d-flex justify-content-center row">
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 3 1.2.1 + DLC2 Data</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb3_121_dlc2\index.html" class="btn btn-outline-info m-1" type="button">🇬🇧 English</a>
+										<a href="xb3_121_dlc2_jp\index.html" class="btn btn-outline-info m-1" type="button">🇯🇵 日本語</a>
+									</div>
+									<small>Last update: May 13, 2023</small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 3 1.3.0 Data*</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb3_130\index.html" class="btn btn-outline-info m-1" type="button">🇬🇧 English</a>
+										<a href="xb3_130_jp\index.html" class="btn btn-outline-info m-1" type="button">🇯🇵 日本語</a>
+									</div>
+									<small>Last update: May 13, 2023</small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 3 DLC3 Data*</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb3_dlc3\index.html" class="btn btn-outline-info m-1" type="button">🇬🇧 English</a>
+										<a href="xb3_dlc3_jp\index.html" class="btn btn-outline-info m-1" type="button">🇯🇵 日本語</a>
+									</div>
+									<small>Last update: May 13, 2023</small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 3 2.0.0 + DLC 1-3 + Future Redeemed Data</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb3_200_dlc4\index.html" class="btn btn-outline-info m-1" type="button">🇬🇧 English</a>
+										<a href="xb3_200_dlc4_jp\index.html" class="btn btn-outline-info m-1" type="button">🇯🇵 日本語</a>
+									</div>
+									<small>Last update: May 13, 2023</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="d-flex justify-content-center row">
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 3 Audio Mapping data<br/>(🇬🇧 English / 🇯🇵 日本語)</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb3_audio_mapping.html" class="btn btn-outline-info m-1" type="button">🧍 HTML</a>
+										<a href="xb3_audio_mapping.csv" class="btn btn-outline-info m-1" type="button">🤖 CSV</a>
+									</div>
+									<small>Last update: May 13, 2023</small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3 mt-2">
+							<div class="card text-white card-bg card-height">
+								<div class="card-body">
+									<h4 class="card-title">Xenoblade 3 BDAT hashes</h4>
+								</div>
+								<div class="card-footer">
+									<div class="d-flex justify-content-center">
+										<a href="xb3_hashes.csv" class="btn btn-outline-info m-1" type="button">🤖 CSV</a>
+									</div>
+									<small>Last update: May 13, 2023</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-left mt-4">
+						<p>* for 1.3.0 the base game data is separate from DLC3 data because of various debug data being left on accident in those.<br />
+						** contains most known hashes, might be missing small subset of hashes compared to xb3tool</p>
+					</div>
+				</div>
+			  </div>
+		  </div>
+		  <div class="tab-pane fade" id="pills-xcxde" role="tabpanel" aria-labelledby="pills-xcxde-tab" tabindex="0">
+			  <div class="col-md-12 py-2">
+				<div class="h-100 p-5 rounded-3">
+					<img class="d-block mx-auto mb-4 img-fluid" src="/images/XCXDE_logo_small.png">
+					<div class="d-flex justify-content-center">
+						<p>Nothing to see here🤷️</p>
+					</div>
+				</div>
+			  </div>
+		  </div>
+		  <div class="tab-pane fade" id="pills-tools" role="tabpanel" aria-labelledby="pills-tools-tab" tabindex="0">
+			<div class="text-center">
+				<h3>General purpose file manipulation tools</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">XbTool</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">Tools to read, process and export data from Xenoblade games.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/AlexCSDev/XbTool" class="btn btn-outline-info mt-1" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">XenoLib/XenobladeToolset</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span><span class="badge badge-bg mt-2 ms-2">👨‍💻 Developer resource</span>
+								</h6>
+								<p class="card-text">XenoLib is independent serialize library for various formats used by Xenoblade Engine. Xenoblade Toolset is a collection of conversion tools under XenoLib.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/PredatorCZ/XenoLib" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">QuickBMS</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc1_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">Universal file extractor. Mostly recommended for Xenoblade 1 file formats and wwise audio packages in XC3 and XCDE.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://aluigi.altervista.org/quickbms.htm" class="btn btn-outline-info" target="_blank">Visit site</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">SimpleDimple</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">Extractor for SAR1 archives.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/modeco80/SimpleDimple" class="btn btn-outline-info" target="_blank">GitHub</a>
+								<a href="tools/apps/archives/simpledimple.exe" class="btn btn-outline-info" target="_blank">Windows binary</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">SAR.bms</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2 ms-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">QuickBMS plugin for SAR1 archive extraction.</p>
+							</div>
+							<div class="card-footer">
+								<a href="/tools/scripts/archives/SAR.bms" class="btn btn-outline-info" target="_blank">Download</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Nenkai's XenoTools</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcde_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2 ms-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">Set of libraries and tools for various Xenoblade Chronicles games.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/Nenkai/XenoTools" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Recordkeeper</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2 ms-2">🌍 Online tool</span>
+								</h6>
+								<p class="card-text">Xenoblade Chronicles 3 save editor</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://rocco.dev/recordkeeper/" class="btn btn-outline-info" target="_blank">Visit site</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">XbxDeTool</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcxde_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">Xenoblade Chronicles X: Definitive Edition ARD/ARH2 Extractor.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/Nenkai/XbxDeTool" class="btn btn-outline-info mt-1" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>Data table tools</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">bdat-rs</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc1_icon.svg" width="32"/><img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span><span class="badge badge-bg mt-2 ms-2">👨‍💻 Developer resource</span>
+								</h6>
+								<p class="card-text">A library to (de)serialize Monolithsoft's proprietary BDAT format, used for data tables in all Xenoblade games.
+								<br />Includes command-line toolset and documentation explaining BDAT file format structure.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/RoccoDev/bdat-rs" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xb3tool</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">This repository contains tool used to generate html tables from BDAT as well as several other tools.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/vaxherd/xb3tool" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xc3_data_sheet</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">Readers for Xenoblade 3 data sheet files</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://gist.github.com/RoccoDev/935c43c98384115f56dd3af57667b030" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>Model tools</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Xenoblade Importer For Noesis</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">Xenoblade file format plugin for <a href="https://www.richwhitehouse.com/index.php?content=inc_projects.php&showproject=91" target="_blank">Noesis</a>.<br><b>⚠️As of 2025 considered legacy, consider using xenoblade_blender instead.</b></p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/Turk645/Xenoblade-Switch-Model-Importer-Noesis" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Xenoblade Shape Key Tool</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">Helper blender addon for Turk645's Noesis Xenoblade Model Importer.<br />This addon automatically loads morph names from wimdo file and sets proper shape key names.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/AlexCSDev/XenobladeShapeKeyTool" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Monado Forge</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">An addon for Blender (written with 3.3.1) for working with Xenoblade files</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/Sir-Teatei-Moonlight/monado-forge" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">XenoMax</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">
+									XenoMax is an importer for 3ds max for formats used by Xenoblade Engine.<br/>
+									<b>⚠️As of 2023 should mainly be used if you want to extract animations and X models.️</b>
+								</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/Sir-Teatei-Moonlight/monado-forge" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">"Temp" texture viewer</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🌍 Online tool</span>
+								</h6>
+								<p class="card-text">Online tool to view different color channels of "temp" (channel packed) textures.</p>
+							</div>
+							<div class="card-footer">
+								<a href="tools/models/temp_texture_viewer/" class="btn btn-outline-info" target="_blank">Open</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">fmt_XC3_wimdo.py</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">Animation export plugin for <a href="https://www.richwhitehouse.com/index.php?content=inc_projects.php&showproject=91" target="_blank">Noesis</a>.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/Joschuka/fmt_xc3" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xenoblade_blender</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/><img src="/images/xcxde_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">A Blender addon for importing models, maps, and animations.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/ScanMountGoat/xenoblade_blender" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>Mods</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Xenomods</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🕹️ Mod</span>
+								</h6>
+								<p class="card-text">Modding framework for Xenoblade games on Switch.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/BlockBuilder57/xenomods" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xc3-file-loader</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🕹️ Mod</span>
+								</h6>
+								<p class="card-text">This mod allows you to load custom files, replacing the game's defaults.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/RoccoDev/xc3-file-loader" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xc3-difficulty-unlocker</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🕹️ Mod</span>
+								</h6>
+								<p class="card-text">This mod acts as a replacement for custom difficulty settings in Xenoblade 3, until we get an official solution.
+								<br/>
+								Additionally, it also allows you to select the hidden "Very Hard" difficulty that's left in the game's files.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/RoccoDev/xc3-difficulty-unlocker" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>Developer resources</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xc3_lib</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">👨‍💻 Developer resource</span>
+								</h6>
+								<p class="card-text">Xenoblade Chronicles file format and rendering libraries.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/ScanMountGoat/xc3_lib" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">imgui-xeno</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">👨‍💻 Developer resource</span>
+								</h6>
+								<p class="card-text">A Dear ImGui backend for Xenoblade games.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/RoccoDev/imgui-xeno" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xc3_model_py</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">‍💻 Developer resource</span>
+								</h6>
+								<p class="card-text">Python bindings to <a href="https://github.com/ScanMountGoat/xc3_lib" target="_blank">xc3_model</a>.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/ScanMountGoat/xc3_model_py" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>Audio tools</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">vgmstream</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc1_icon.svg" width="32"/><img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span><span class="badge badge-bg mt-2 ms-2">👨‍💻 Developer resource</span><span class="badge badge-bg mt-2 ms-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">Library, standalone application and plugins for playback of various audio file formats</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://vgmstream.org/" class="btn btn-outline-info" target="_blank">Visit site</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">WWISER</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">WWISER can be used for exploring .bnk files and doing some other things with Xenoblade DE and Xenoblade 3 audio.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/bnnm/wwiser" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xeno3_PCK.bms</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2 ms-2">➕ Plugin</span>
+								</h6>
+								<p class="card-text">QuickBMS plugin for wwise .pck extraction</p>
+							</div>
+							<div class="card-footer">
+								<a href="/tools/scripts/audio/xeno3_PCK.bms" class="btn btn-outline-info" target="_blank">Download</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h3>Legacy game tools</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-1">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Brresviewer</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary">
+								<img src="/images/xc1_icon.svg" width="32"/>
+								<br/>
+								<span class="badge badge-bg mt-2">🧰 Standalone tool</span>
+								</h6>
+								<p class="card-text">Tool to view & convert xenoblade 1 formats</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://tcrf.net/Notes:Xenoblade_Chronicles#BRRES_Viewer_1.3.1" class="btn btn-outline-info" target="_blank">TCRF page</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="tab-pane fade" id="pills-links" role="tabpanel" aria-labelledby="pills-links-tab" tabindex="0">
+			  <div class="text-center">
+				<h4>Useful links</h4>
+				<h3>Discord servers</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">World Tree Research Discord</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc1_icon.svg" width="32"/><img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/></h6>
+								<p class="card-text">Discord server dedicated to reverse engineering and other research related to Xenoblade series.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://discord.gg/27Wz4QB" class="btn btn-outline-info" target="_blank">Join</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<h3>Knowledge bases/wikis</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">The Cutting Room Floor's Xeno series category</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc1_icon.svg" width="32"/><img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/></h6>
+								<p class="card-text">The Cutting Room Floor is a site dedicated to unearthing and researching unused and cut content from video games.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://tcrf.net/Category:Xeno_series" class="btn btn-outline-info" target="_blank">Visit site</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Xeno Series Wiki</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc1_icon.svg" width="32"/><img src="/images/xcx_icon.svg" width="32"/><img src="/images/xc2_icon.svg" width="32"/><img src="/images/xcde_icon.svg" width="32"/><img src="/images/xc3_icon.svg" width="32"/><img src="/images/xcxde_icon.svg" width="32"/></h6>
+								<p class="card-text">Independent wiki for the "Xeno" game series.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://www.xenoserieswiki.org" class="btn btn-outline-info" target="_blank">Visit site</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">xc2f - Xenoblade 2 file formats</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc2_icon.svg" width="32"/></h6>
+								<p class="card-text">GitHub wiki describing various Xenoblade 2 file formats</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://github.com/atnavon/xc2f/wiki" class="btn btn-outline-info" target="_blank">GitHub</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">RoccoDev's personal blog</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc3_icon.svg" width="32"/><img src="/images/xcxde_icon.svg" width="32"/></h6>
+								<p class="card-text">Personal blog of RoccoDev with information about inner workings of various Xenoblade Chronicles 3 systems.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://rocco.dev/posts/" class="btn btn-outline-info" target="_blank">Visit site</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Nenkai's Xeno Docs</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xcde_icon.svg" width="32"/></h6>
+								<p class="card-text">Documentation for internals of Xenoblade games. At the time of writing contains technical documentation for Xenoblade 1: Definitive Edition's bdat tables.</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://nenkai.github.io/XenoDocs/" class="btn btn-outline-info" target="_blank">Visit site</a>
+							</div>
+						</div>
+					</div>	
+				</div>
+				<hr/>
+				<h3>Databases/data lists</h3>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Xenoblade 3 Model Database</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc3_icon.svg" width="32"/></h6>
+								<p class="card-text">This document contains database of all models and maps in Xenoblade 3</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://docs.google.com/spreadsheets/d/12wgzG4gIgd8iY6GyYw_ObsUTDjE0ZvE2CMNtX5WrWzs" class="btn btn-outline-info mt-1">Google Spreadsheets</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Xenoblade Chronicles 3 voice lines list</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc3_icon.svg" width="32"/></h6>
+								<p class="card-text">This document contains detailed information about all voice lines and cutscenes in Xenoblade Chronicles 3</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://docs.google.com/spreadsheets/d/1bhNzoqWxh-QgFg4KLatQ4pDPSn6CNwgy/" class="btn btn-outline-info mt-1">Google Spreadsheets</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">XC3 Enemy Compendium</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc3_icon.svg" width="32"/></h6>
+								<p class="card-text">Database of all information related to enemies in Xenoblade Chronicles 3</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://rocco.dev/xc3-enemy-compendium/" class="btn btn-outline-info mt-1">Visit site</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center row">
+					<div class="col-md-4 col-lg-3 mt-2">
+						<div class="card text-white card-bg card-height">
+							<div class="card-body">
+								<h5 class="card-title">Xenoblade 3 devxml spreadsheet</h5>
+								<h6 class="card-subtitle mb-2 text-body-secondary"><img src="/images/xc3_icon.svg" width="32"/></h6>
+								<p class="card-text">Spreadsheet containing information about valeus stored in devxml files of Xenoblade Chronicles 3</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://docs.google.com/spreadsheets/d/1_prmO3-6ra4kaCy07Kd2E7Lbcyf1X052Is7MmfREkYk/edit#gid=778740944" class="btn btn-outline-info mt-1">Google Spreadsheets</a>
+							</div>
+						</div>
+					</div>				
+				</div>
+		  </div>
+		</div>
+	</div>
+	<footer class="pt-3 text-center">
+		<small>
+		Xenoblade 1, 2, X data is provided by <a href="https://xenoblade.github.io">https://xenoblade.github.io</a>.
+		Xenoblade 3 data is extracted using <a href="https://github.com/vaxherd/xb3tool">xb3tool by vaxherd & contributors</a>.
+		<br />
+		Thanks to <a href="https://github.com/RoccoDev">RoccoDev</a> for their help with audio mapping data for Xenoblade 3. Icons and images are provided by <a href="https://www.xenoserieswiki.org">Xeno Series Wiki</a>.
+		<br />
+		Maintained by Alexsey @ World Tree Research Discord
+		<br />
+		Please refer to <a href="https://github.com/xenobladedata/xenobladedata.github.io/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> for information about contributing new content to this site.
+		</small>
+	</footer>
+	<script src="/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
