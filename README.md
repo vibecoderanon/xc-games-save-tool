@@ -5,15 +5,20 @@
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10+-3776ab.svg)](#)
 [![Viewer: HTML5 + CSS3](https://img.shields.io/badge/Viewer-HTML5_%2B_CSS3-e34f26.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](LICENSE)
+[![Launch Online: vibecoderanon.github.io/#xcde](https://img.shields.io/badge/⚡_Launch-Online_Save_Converter-06b6d4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://vibecoderanon.github.io/#xcde)
 
 A binary translation and save migration toolkit for converting *Xenoblade Chronicles* (Nintendo Wii, Title ID `SX4E`) saves into native *Xenoblade Chronicles: Definitive Edition* (Nintendo Switch) save format.
 
 The suite accurately translates character EXP, AP, money, play time, equipment states, party composition, and thumbnail cards, while preserving pre-clear title screen states.
 
+> [!TIP]
+> **Use this tool online right now:** Convert Wii saves to Switch XC:DE format and inspect party data directly in your browser on the **[vibecoderanon Web Portal (XCDE Tool)](https://vibecoderanon.github.io/#xcde)**!
+
 ---
 
 ## Quick Navigation
 
+- [⚡ Launch Online Save Converter (Web Portal)](https://vibecoderanon.github.io/#xcde)
 - [Conversion Pipeline Overview](#conversion-pipeline-overview)
 - [Slot & File Mapping](#slot--file-mapping)
 - [Binary Offset & Character Matrix](#binary-offset--character-matrix)
