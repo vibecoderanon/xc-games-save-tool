@@ -1,8 +1,10 @@
 ﻿# Reference tools (contain independent Git repositories)
 tools/
 
-# Archives
+# Archives & backups
 *.zip
+*.bak
+*.backup
 
 # Python cache
 __pycache__/

@@ -1,13 +1,13 @@
 import os
 import sys
 
-# Add XCDE-Save-Editor directory to path
-sys.path.insert(0, r"c:\Users\teit\Documents\Antigravity\xc games save tool\tools\XCDE-Save-Editor")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE_DIR)
 from xcde_editor import XCDESaveEditor
 
-out_dir = r"c:\Users\teit\Documents\Antigravity\xc games save tool\converted_switch_saves"
+out_dir = os.path.join(BASE_DIR, "converted_switch_saves")
 
-for fname in ["bfsgame01.sav", "bfsgame02.sav", "bfsgame03.sav"]:
+for fname in ["bfsgame00.sav", "bfsgame01.sav", "bfsgame02.sav"]:
     fpath = os.path.join(out_dir, fname)
     if not os.path.exists(fpath):
         continue
