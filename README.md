@@ -128,10 +128,13 @@ python verify_converted_saves.py
 ```
 
 ### 3. Deploy to Nintendo Switch
-Using your preferred Switch homebrew save manager (**JKSV** or **Checkpoint**):
-1. Create a backup of your *Xenoblade Chronicles: Definitive Edition* save.
+Using your preferred Switch homebrew save manager (**JKSV**, **Checkpoint**, or **Sphaira**):
+1. Create a backup of your *Xenoblade Chronicles: Definitive Edition* save (Title ID `0100FF500E34A000`):
+   - **JKSV:** `sdmc:/JKSV/Xenoblade Chronicles Definitive Edition/<timestamp>/`
+   - **Sphaira:** `sdmc:/dumps/Save/Xenoblade Chronicles Definitive Edition/<timestamp>/`
+   - **Checkpoint:** `sdmc:/switch/Checkpoint/saves/0x0100FF500E34A000/`
 2. Replace the contents of the backup directory with the files from `converted_switch_saves/`.
-3. Restore the backup in JKSV.
+3. Restore the backup using your save manager.
 
 ---
 
