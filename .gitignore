@@ -1,0 +1,16 @@
+﻿# Reference tools (contain independent Git repositories)
+tools/
+
+# Archives & backups
+*.zip
+*.bak
+*.backup
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
+Thumbs.db
