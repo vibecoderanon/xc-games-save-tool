@@ -123,6 +123,7 @@ xc games save tool/
 ├── README.md                              # Technical suite documentation
 ├── page.html                              # Interactive visual save inspector
 ├── convert_xc1_to_xcde_final.py           # Production Wii → Switch conversion script
+├── xcde_editor.py                         # Standalone CLI save editor (Arts, EXP, AP, Levels)
 ├── verify_converted_saves.py              # Save integrity and offset verification script
 ├── converted_switch_saves/                # Output folder for generated Switch .sav & .tmb
 │   └── .gitkeep
@@ -135,23 +136,73 @@ xc games save tool/
 
 ## Usage & Conversion Guide
 
-### 1. Run the Conversion Pipeline
-Ensure your Wii save files are placed in `wii/title/SX4E/`:
+### 1. Converting onto a Fresh Switch Save
+The conversion pipeline injects your original Wii stats (Levels, EXP, AP, Gold, and Play Time) cleanly into a destination Switch save without touching or corrupting scenario cutscenes and quest stage flags.
 
+1. **Option A: Starting Fresh from Chapter 1 (Default)**
+   - The included base template (`vibecoderanon - 2024.09.08...`) is a pristine, pre-clear Chapter 1 save at Colony 9.
+   - If you start from the beginning of the story, your converted characters will carry over their levels, AP, and money cleanly.
+2. **Option B: Starting from an Advanced Story Chapter**
+   - If you want to resume later in the campaign without replaying early chapters, dump a clean Switch save at your desired chapter (e.g. via JKSV) or obtain a clean chapter dump.
+   - In `convert_xc1_to_xcde_final.py`, update `REF_PRE_CLEAR_DIR` to point to that clean Switch save folder.
+3. Place your Wii save files (`monado01`, `monado02`, and/or `monado03`) into `wii/title/SX4E/`.
+4. Run the conversion script:
+   ```bash
+   python convert_xc1_to_xcde_final.py
+   ```
+   Converted saves (`bfsgame00.sav`, `bfsgame01.sav`, `bfsgame02.sav`, `bfssystem.sav`) and their `.tmb` thumbnail images will be generated in `converted_switch_saves/`.
+
+---
+
+## Standalone Arts & Character Editor (`xcde_editor.py`)
+
+To inspect or adjust Arts levels, max manual tiers, or character stats on any Switch save **without breaking quest or scenario flags**, use the built-in CLI editor [`xcde_editor.py`](xcde_editor.py):
+
+### 1. Inspect Save Contents
 ```bash
-python convert_xc1_to_xcde_final.py
+python xcde_editor.py <path_to_save.sav>
 ```
+Displays all character IDs, names, current levels, XP, and AP.
 
-Converted saves (`bfsgame00.sav`, `bfsgame01.sav`, `bfsgame02.sav`, `bfssystem.sav`) and their `.tmb` thumbnail images will be generated in `converted_switch_saves/`.
+### 2. Arts Level & Manual Limit Configuration
+Third-party save editors often corrupt quest state machines when unlocking arts. `xcde_editor.py` writes directly and exclusively to the 188-art structure (`0x1536E8`):
 
-### 2. Verify Generated Saves
+- **Set all arts levels:**
+  ```bash
+  python xcde_editor.py <path_to_save.sav> allartlevel <level>
+  ```
+- **Set maximum unlock tier for all arts (Manual Limit):**
+  ```bash
+  python xcde_editor.py <path_to_save.sav> allartmax <tier>
+  ```
+  *(Tiers: `0` = IV Beginner, `1` = VII Intermediate, `2` = X Expert, `3` = XII Master)*
+
+### 3. Individual Character Stat Adjustments
+- **Modify specific character level:**
+  ```bash
+  python xcde_editor.py <path_to_save.sav> level <character_id> <new_level>
+  ```
+- **Modify specific character AP:**
+  ```bash
+  python xcde_editor.py <path_to_save.sav> ap <character_id> <new_ap>
+  ```
+- **Modify specific character XP:**
+  ```bash
+  python xcde_editor.py <path_to_save.sav> <character_id> <new_xp>
+  ```
+
+*(Changes are safely written to `<save_file>.modified` alongside an automatic `.backup` of the original).*
+
+---
+
+### 4. Verify Generated Saves
 Run the automated verification suite to validate file sizes, headers, and play times:
 
 ```bash
 python verify_converted_saves.py
 ```
 
-### 3. Deploy to Nintendo Switch
+### 5. Deploy to Nintendo Switch
 Using your preferred Switch homebrew save manager (**JKSV**, **Checkpoint**, or **Sphaira**):
 1. Create a backup of your *Xenoblade Chronicles: Definitive Edition* save (Title ID `0100FF500E34A000`):
    - **JKSV:** `sdmc:/JKSV/Xenoblade Chronicles Definitive Edition/<timestamp>/`

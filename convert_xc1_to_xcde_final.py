@@ -98,15 +98,26 @@ def convert_slot(wii_filename, ref_sav_filename, ref_tmb_filename, out_sav_filen
     sav[0x151B40:0x151B44] = struct.pack("<I", money)
 
     # 6. Update Party structure at 0x152318
-    party_ids = [p1, p2, p3]
-    active_count = 0
-    for idx, cid in enumerate(party_ids):
-        if 1 <= cid <= 11:
-            sav[0x152318 + (idx * 2) : 0x152318 + (idx * 2) + 2] = struct.pack("<H", cid)
-            active_count += 1
-    for idx in range(active_count, 12):
-        sav[0x152318 + (idx * 2) : 0x152318 + (idx * 2) + 2] = struct.pack("<H", 0)
-    sav[0x152330] = active_count
+    # Read full unlocked roster list from Wii save (0xD1FC)
+    wii_roster = []
+    for i in range(12):
+        cid = struct.unpack(">I", wii[0xD1FC + (i * 4) : 0xD200 + (i * 4)])[0]
+        if 1 <= cid <= 11 and cid not in wii_roster:
+            wii_roster.append(cid)
+
+    # Fallback to active trio if roster array is empty
+    if not wii_roster:
+        for cid in [p1, p2, p3]:
+            if 1 <= cid <= 11 and cid not in wii_roster:
+                wii_roster.append(cid)
+
+    # Write up to 12 character IDs to XCDE party table
+    for idx in range(12):
+        cid = wii_roster[idx] if idx < len(wii_roster) else 0
+        sav[0x152318 + (idx * 2) : 0x152318 + (idx * 2) + 2] = struct.pack("<H", cid)
+
+    sav[0x152330] = len(wii_roster)
+    print(f"XCDE Roster   : {wii_roster} (Count: {len(wii_roster)})")
 
     # 7. Update PartyMembers array at 0x152368
     PARTY_MEMBERS_OFFSET = 0x152368
@@ -146,25 +157,44 @@ def convert_slot(wii_filename, ref_sav_filename, ref_tmb_filename, out_sav_filen
     print(f"Copied Thumbnail: {out_tmb_path}")
 
 def main():
-    if os.path.exists(OUT_DIR):
-        shutil.rmtree(OUT_DIR)
+    if not os.path.exists(WII_DIR):
+        print(f"Error: Wii save directory not found: {WII_DIR}")
+        print("Please place your Wii monado01/02/03 save files inside wii/title/SX4E/")
+        return
+
+    wii_saves_present = [f for f in ["monado01", "monado02", "monado03"] if os.path.exists(os.path.join(WII_DIR, f))]
+    if not wii_saves_present:
+        print(f"Error: No monado save files found in {WII_DIR}")
+        print("Please place your Wii monado01, monado02, or monado03 files in that directory.")
+        return
+
+    if not os.path.exists(REF_PRE_CLEAR_DIR):
+        print(f"Error: Base Switch template directory not found: {REF_PRE_CLEAR_DIR}")
+        return
+
     os.makedirs(OUT_DIR, exist_ok=True)
 
     saves = [
         # (wii_file, ref_sav_template, ref_tmb_template, out_sav_name, out_tmb_name)
         ("monado01", "bfsgame00.sav", "bfsgame00.tmb", "bfsgame00.sav", "bfsgame00.tmb"), # Manual Slot 1
-        ("monado02", "bfsgame01.sav", "bfsgame01.tmb", "bfsgame01.sav", "bfsgame01.tmb"), # Manual Slot 2 (Latest)
+        ("monado02", "bfsgame01.sav", "bfsgame01.tmb", "bfsgame01.sav", "bfsgame01.tmb"), # Manual Slot 2
         ("monado03", "bfsgame02.sav", "bfsgame02.tmb", "bfsgame02.sav", "bfsgame02.tmb"), # Manual Slot 3
     ]
 
+    converted_any = False
     for wii_file, ref_sav, ref_tmb, out_sav, out_tmb in saves:
-        convert_slot(wii_file, ref_sav, ref_tmb, out_sav, out_tmb)
+        wii_file_path = os.path.join(WII_DIR, wii_file)
+        if os.path.exists(wii_file_path):
+            convert_slot(wii_file, ref_sav, ref_tmb, out_sav, out_tmb)
+            converted_any = True
 
-    # Copy pre-clear bfssystem.sav
-    ref_system = os.path.join(REF_PRE_CLEAR_DIR, "bfssystem.sav")
-    if os.path.exists(ref_system):
-        shutil.copyfile(ref_system, os.path.join(OUT_DIR, "bfssystem.sav"))
-        print(f"\nCopied pre-clear bfssystem.sav to {OUT_DIR}")
+    if converted_any:
+        # Copy pre-clear bfssystem.sav if present
+        ref_system = os.path.join(REF_PRE_CLEAR_DIR, "bfssystem.sav")
+        if os.path.exists(ref_system):
+            shutil.copyfile(ref_system, os.path.join(OUT_DIR, "bfssystem.sav"))
+            print(f"\nCopied pre-clear bfssystem.sav to {OUT_DIR}")
+        print(f"\nConversion complete! Converted files ready in: {OUT_DIR}")
 
 if __name__ == "__main__":
     main()
